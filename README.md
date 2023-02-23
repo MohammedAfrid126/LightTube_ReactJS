@@ -16,7 +16,6 @@ Overall, this YouTube clone provides a modern and efficient user experience, tha
 ![App Screenshot](https://raw.github.com/MohammedAfrid126/LightTube_ReactJS/master/web-view-2.jpg)
 ![App Screenshot](https://raw.github.com/MohammedAfrid126/LightTube_ReactJS/master/web-view-3.jpg)
 ![App Screenshot](https://raw.github.com/MohammedAfrid126/LightTube_ReactJS/master/web-view-4.jpg)
-![App Screenshot](https://raw.github.com/MohammedAfrid126/LightTube_ReactJS/master/web-view-5.jpg)
 
 
 
