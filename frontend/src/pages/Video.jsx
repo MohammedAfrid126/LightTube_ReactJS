@@ -121,6 +121,7 @@ const Video = () => {
   const path = useLocation().pathname.split('/')[2];
 
   const [channel, setChannel] = useState({});
+  const [sharedtext, setSharedtext] = useState('Share');
 
 
   useEffect(() => {
@@ -161,6 +162,16 @@ const Video = () => {
 
     dispatch(subscription(channel._id));
   }
+
+  const handleShare = ()=>{
+    setSharedtext("Copied");
+    const sharedtext=window.location.href;
+    navigator.clipboard.writeText(sharedtext);
+    setTimeout(() => {
+      setSharedtext("Shared");
+    },2000);
+  }
+
   return (
     <Container>
       <Content>
@@ -177,8 +188,8 @@ const Video = () => {
             <Button onClick={handleDislike}>
               {currentVideo?.dislikes?.includes(currentUser._id) ? (<ThumbDown />) : (<ThumbDownOffAltOutlinedIcon />)} {" "} {currentVideo.dislikes?.length}
             </Button>
-            <Button>
-              <ReplyOutlinedIcon /> Share
+            <Button onClick={handleShare}>
+              <ReplyOutlinedIcon /> {sharedtext}
             </Button>
             <Button>
               <AddTaskOutlinedIcon /> Save

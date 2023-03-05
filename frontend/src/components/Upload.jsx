@@ -91,7 +91,6 @@ export default function Upload(props) {
         })
     }
     const uploadFile = (file, urlType) => {
-        console.log(video);
         const storage = getStorage(app);
         const fileName = new Date().getTime() + file.name;
         const storageRef = ref(storage, fileName);
@@ -139,12 +138,11 @@ export default function Upload(props) {
         const handleUpload = async(e) => {
             e.preventDefault();
             try {
-                console.log(input);
                 const res = await axios.post('http://localhost:5000/api/video', {...input,tags} ,{headers: {Authorization: 'Bearer' },withCredentials : true})
                 setOpen(false)
                 navigate(`/video/${res.data._id}`)
             } catch (error) {
-                
+                console.log(error);
             }
         }
 
